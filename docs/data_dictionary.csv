@@ -1,0 +1,87 @@
+column,proposal_role,notes
+StartDate,survey_meta,Qualtrics start timestamp; QC only unless justified
+Finished,survey_meta,Completion flag from Qualtrics
+RecordedDate,survey_meta,Submission timestamp; QC only
+responseid,identifier,Internal row key; do not display in UI
+schoolnum,identifier,Anonymized institution cluster id
+nrweight,survey_design,Post-stratification weight for descriptive stats
+Random,survey_meta,Randomization field from survey (if present)
+inst_survey,context,Institution survey label
+inst_hmsyear,context,HMS academic year label
+inst_size,context,Enrollment size
+inst_type,context,Institution type
+inst_public,context,Public vs private
+inst_geo,context,Geographic category
+inst_specart,context,Special art institution flag
+inst_speccc,context,Community college flag
+inst_gradrate,context,Graduation rate
+gad7_1,outcome,GAD-7 item 1
+gad7_2,outcome,GAD-7 item 2
+gad7_3,outcome,GAD-7 item 3
+gad7_4,outcome,GAD-7 item 4
+gad7_5,outcome,GAD-7 item 5
+gad7_6,outcome,GAD-7 item 6
+gad7_7,outcome,GAD-7 item 7
+gad7_impa,outcome,GAD-7 item 8 (impairment)
+anx_score,outcome,Derived anxiety score in public file
+phq9_1,optional_outcome,PHQ-9 item 1; comorbidity context only
+phq9_2,optional_outcome,PHQ-9 item 2
+phq9_3,optional_outcome,PHQ-9 item 3
+phq9_4,optional_outcome,PHQ-9 item 4
+phq9_5,optional_outcome,PHQ-9 item 5
+phq9_6,optional_outcome,PHQ-9 item 6
+phq9_7,optional_outcome,PHQ-9 item 7
+phq9_8,optional_outcome,PHQ-9 item 8
+phq9_9,optional_outcome,PHQ-9 item 9
+dep_impa,optional_outcome,Depression impairment item
+deprawsc,optional_outcome,Depression raw score
+lone_lackcompanion,predictor_slider,UCLA loneliness
+lone_leftout,predictor_slider,UCLA loneliness
+lone_isolated,predictor_slider,UCLA loneliness
+aca_impa,predictor_slider,Academic impact
+sp_time,predictor_slider,Study time proxy (hours/week)
+yr_sch,predictor_slider,Year in school
+persist,predictor_slider,Persistence / agreement
+stress1,predictor_slider,Perceived stress
+stress2,predictor_slider,Perceived stress
+stress3,predictor_slider,Perceived stress
+stress4,predictor_slider,Perceived stress
+sleep_wknight,predictor_slider,Sleep weekday night
+sleep_wkend,predictor_slider,Sleep weekend night
+time_manage,predictor_slider,Time management
+age,fairness_demographics,Age
+sex_birth,fairness_demographics,Sex assigned at birth
+gender_male,fairness_demographics,Gender identity flag
+gender_female,fairness_demographics,Gender identity flag
+gender_queer,fairness_demographics,Gender identity flag
+gender_nonbin,fairness_demographics,Gender identity flag
+gender_trans,fairness_demographics,Gender identity flag
+gender_prefnoresp,fairness_demographics,Prefer not to respond
+gender_selfID,fairness_demographics,Self-identify gender selected
+sexual_h,fairness_demographics,Sexual orientation item
+sexual_l,fairness_demographics,Sexual orientation item
+sexual_g,fairness_demographics,Sexual orientation item
+sexual_bi,fairness_demographics,Sexual orientation item
+sexual_queer,fairness_demographics,Sexual orientation item
+sexual_quest,fairness_demographics,Sexual orientation item
+sexual_asexual,fairness_demographics,Sexual orientation item
+sexual_pan,fairness_demographics,Sexual orientation item
+sexual_prefnoresp,fairness_demographics,Prefer not to respond
+sexual_selfID,fairness_demographics,Self-ID selected
+race_black,fairness_demographics,Race/ethnicity
+race_ainaan,fairness_demographics,Race/ethnicity
+race_asian,fairness_demographics,Race/ethnicity
+race_his,fairness_demographics,Race/ethnicity
+race_pi,fairness_demographics,Race/ethnicity
+race_mides,fairness_demographics,Race/ethnicity
+race_white,fairness_demographics,Race/ethnicity
+race_other,fairness_demographics,Race/ethnicity
+international,fairness_demographics,International student
+age_US,fairness_demographics,Age when moved to US
+gad7_sum_0_21,derived_outcome,Sum of (gad7_i-1); 0-21 anxiety symptom scale; matches anx_score when complete
+gad7_subthreshold_plus,derived_label,1 if gad7_sum>=5 else 0; NaN if sum undefined; not clinical
+gad7_moderate_plus,derived_label,1 if gad7_sum>=10 else 0; common screening cutoff; NaN if sum undefined
+gad7_severe,derived_label,1 if gad7_sum>=15 else 0; NaN if sum undefined
+phq9_sum_0_27,derived_outcome,Sum of (phq9_i-1); matches deprawsc when complete
+phq9_moderate_plus,derived_label,1 if phq9_sum>=10 else 0; NaN if sum undefined
+phq9_severe_plus,derived_label,1 if phq9_sum>=15 else 0; NaN if sum undefined

@@ -1,0 +1,25 @@
+{
+  "reference_file": "HMS_2024-2025_PUBLIC_instchars.csv",
+  "cleaning_stats_all_completed": {
+    "input_rows": 84735,
+    "rows_after_finished_filter": 66432,
+    "dropped_incomplete_survey": 18303,
+    "duplicate_response_ids_dropped": 0,
+    "max_abs_diff_gad7_sum_vs_anx_score": 0.0,
+    "final_rows": 66432
+  },
+  "cleaning_stats_complete_gad7": {
+    "input_rows": 84735,
+    "rows_after_finished_filter": 66432,
+    "dropped_incomplete_survey": 18303,
+    "duplicate_response_ids_dropped": 0,
+    "max_abs_diff_gad7_sum_vs_anx_score": 0.0,
+    "rows_after_complete_gad7": 64392,
+    "dropped_incomplete_gad7": 2040,
+    "final_rows": 64392
+  },
+  "output_files": {
+    "primary_csv": "Data/processed/hms_ml_ready.csv",
+    "complete_gad7_csv": "Data/processed/hms_ml_ready_complete_gad7.csv"
+  }
+}

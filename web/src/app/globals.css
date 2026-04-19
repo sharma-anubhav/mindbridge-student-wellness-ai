@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════
+   MindBridge — Design Tokens
+   ═══════════════════════════════════════════════════ */
+
+/* Dark theme (default) */
+:root, [data-theme="dark"] {
+  --brand:        82 144 106;       /* #52906A sage green */
+  --brand-light:  110 172 135;
+  --brand-dark:   58 114 82;
+
+  --bg:           10 15 12;         /* #0A0F0C near-black */
+  --bg2:          18 26 21;         /* #121A15 card surface */
+  --bg3:          26 36 30;         /* #1A241E elevated */
+
+  --fg:           228 238 232;      /* #E4EEE8 near-white */
+  --fg2:          170 192 178;      /* #AAC0B2 secondary */
+  --fg3:          100 130 112;      /* #648270 tertiary */
+
+  --border:       40 58 48;         /* #28382F */
+  --border-subtle:25 36 30;         /* #19241E */
+
+  color-scheme: dark;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg:           248 251 249;      /* #F8FBF9 */
+  --bg2:          255 255 255;      /* #FFFFFF */
+  --bg3:          240 246 242;      /* #F0F6F2 */
+
+  --fg:           22 34 28;         /* #16221C */
+  --fg2:          58 84 66;         /* #3A5442 */
+  --fg3:          110 140 118;      /* #6E8C76 */
+
+  --border:       210 228 218;      /* #D2E4DA */
+  --border-subtle:232 242 236;      /* #E8F2EC */
+
+  color-scheme: light;
+}
+
+/* ── Base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg));
+  color: rgb(var(--fg));
+  min-height: 100dvh;
+}
+
+/* ── Custom scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--brand) / 0.6); }
+
+/* ── Selection ────────────────────────────────────── */
+::selection {
+  background: rgb(var(--brand) / 0.25);
+  color: rgb(var(--fg));
+}
+
+/* ── Focus ────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid rgb(var(--brand));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Glassmorphism utility ────────────────────────── */
+.glass {
+  background: rgb(var(--bg2) / 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgb(var(--border));
+}
+
+/* ── Gradient text ────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, rgb(var(--brand-light)), rgb(var(--brand)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hero gradient ────────────────────────────────── */
+.hero-bg {
+  background: linear-gradient(-45deg, #0A1510, #142A1C, #0D1F2B, #0A1510);
+  background-size: 400% 400%;
+  animation: gradientPan 12s ease infinite;
+}
+
+[data-theme="light"] .hero-bg {
+  background: linear-gradient(-45deg, #E8F2EC, #D8EEE0, #D4E8F0, #E8F2EC);
+  background-size: 400% 400%;
+}
+
+/* ── Prose (markdown) ─────────────────────────────── */
+.prose { color: rgb(var(--fg2)); }
+.prose h1, .prose h2, .prose h3 { color: rgb(var(--fg)); font-weight: 700; }
+.prose a { color: rgb(var(--brand-light)); text-decoration: underline; }
+.prose strong { color: rgb(var(--fg)); }
+.prose code {
+  background: rgb(var(--bg3));
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.88em;
+}
+
+
+/* ── Chat bubble text ─────────────────────────────── */
+.chat-bubble p { margin: 0; }
+.chat-bubble p + p { margin-top: 0.5rem; }

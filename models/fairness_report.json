@@ -1,0 +1,232 @@
+{
+  "feature_cols": [
+    "lone_lackcompanion",
+    "lone_leftout",
+    "lone_isolated",
+    "aca_impa",
+    "persist",
+    "yr_sch",
+    "phq9_1",
+    "phq9_2",
+    "phq9_3",
+    "phq9_4",
+    "phq9_6"
+  ],
+  "target_reg": "gad7_sum_0_21",
+  "target_clf": "gad7_moderate_plus",
+  "train_rows": 49114,
+  "test_rows": 12279,
+  "eval_metrics": {
+    "regressor_mae": 2.9377,
+    "classifier_auc": 0.871
+  },
+  "residual_std": 3.8444,
+  "fairness_report": {
+    "Gender": {
+      "gender_male": {
+        "n": 16973,
+        "true_prevalence": 0.2364,
+        "predicted_positive_rate": 0.3459,
+        "mean_true_score": 6.023,
+        "mean_predicted_score": 6.77,
+        "tpr": 0.833,
+        "fpr": 0.1951,
+        "mean_pred_prob": 0.3746,
+        "calibration_error": 0.1382
+      },
+      "gender_female": {
+        "n": 41252,
+        "true_prevalence": 0.3522,
+        "predicted_positive_rate": 0.4169,
+        "mean_true_score": 7.882,
+        "mean_predicted_score": 7.605,
+        "tpr": 0.7934,
+        "fpr": 0.2122,
+        "mean_pred_prob": 0.4325,
+        "calibration_error": 0.0803
+      },
+      "gender_nonbin": {
+        "n": 2274,
+        "true_prevalence": 0.5251,
+        "predicted_positive_rate": 0.653,
+        "mean_true_score": 10.346,
+        "mean_predicted_score": 10.076,
+        "tpr": 0.8735,
+        "fpr": 0.4093,
+        "mean_pred_prob": 0.6151,
+        "calibration_error": 0.0901
+      },
+      "gender_queer": {
+        "n": 2097,
+        "true_prevalence": 0.5241,
+        "predicted_positive_rate": 0.66,
+        "mean_true_score": 10.242,
+        "mean_predicted_score": 10.039,
+        "tpr": 0.8854,
+        "fpr": 0.4118,
+        "mean_pred_prob": 0.6152,
+        "calibration_error": 0.0911
+      },
+      "gender_trans": {
+        "n": 1667,
+        "true_prevalence": 0.5405,
+        "predicted_positive_rate": 0.6869,
+        "mean_true_score": 10.498,
+        "mean_predicted_score": 10.38,
+        "tpr": 0.8968,
+        "fpr": 0.4399,
+        "mean_pred_prob": 0.6361,
+        "calibration_error": 0.0956
+      }
+    },
+    "Race": {
+      "race_white": {
+        "n": 37618,
+        "true_prevalence": 0.3389,
+        "predicted_positive_rate": 0.4064,
+        "mean_true_score": 7.639,
+        "mean_predicted_score": 7.457,
+        "tpr": 0.7894,
+        "fpr": 0.21,
+        "mean_pred_prob": 0.4228,
+        "calibration_error": 0.0839
+      },
+      "race_black": {
+        "n": 5641,
+        "true_prevalence": 0.3182,
+        "predicted_positive_rate": 0.418,
+        "mean_true_score": 7.241,
+        "mean_predicted_score": 7.548,
+        "tpr": 0.8446,
+        "fpr": 0.2189,
+        "mean_pred_prob": 0.4301,
+        "calibration_error": 0.1119
+      },
+      "race_asian": {
+        "n": 10564,
+        "true_prevalence": 0.2932,
+        "predicted_positive_rate": 0.3957,
+        "mean_true_score": 7.003,
+        "mean_predicted_score": 7.473,
+        "tpr": 0.835,
+        "fpr": 0.2135,
+        "mean_pred_prob": 0.4222,
+        "calibration_error": 0.129
+      },
+      "race_his": {
+        "n": 12650,
+        "true_prevalence": 0.348,
+        "predicted_positive_rate": 0.4479,
+        "mean_true_score": 7.803,
+        "mean_predicted_score": 7.865,
+        "tpr": 0.8369,
+        "fpr": 0.2403,
+        "mean_pred_prob": 0.4531,
+        "calibration_error": 0.1052
+      },
+      "race_ainaan": {
+        "n": 1043,
+        "true_prevalence": 0.4046,
+        "predicted_positive_rate": 0.5101,
+        "mean_true_score": 8.575,
+        "mean_predicted_score": 8.575,
+        "tpr": 0.8507,
+        "fpr": 0.2786,
+        "mean_pred_prob": 0.5007,
+        "calibration_error": 0.0961
+      },
+      "race_mides": {
+        "n": 1302,
+        "true_prevalence": 0.3495,
+        "predicted_positive_rate": 0.4363,
+        "mean_true_score": 7.895,
+        "mean_predicted_score": 7.782,
+        "tpr": 0.8198,
+        "fpr": 0.2302,
+        "mean_pred_prob": 0.4437,
+        "calibration_error": 0.0943
+      }
+    },
+    "International": {
+      "Domestic": {
+        "n": 56023,
+        "true_prevalence": 0.3314,
+        "predicted_positive_rate": 0.4118,
+        "mean_true_score": 7.522,
+        "mean_predicted_score": 7.504,
+        "tpr": 0.8077,
+        "fpr": 0.2155,
+        "mean_pred_prob": 0.4266,
+        "calibration_error": 0.0952
+      },
+      "International": {
+        "n": 5330,
+        "true_prevalence": 0.3009,
+        "predicted_positive_rate": 0.385,
+        "mean_true_score": 7.145,
+        "mean_predicted_score": 7.453,
+        "tpr": 0.8142,
+        "fpr": 0.2002,
+        "mean_pred_prob": 0.4176,
+        "calibration_error": 0.1166
+      }
+    },
+    "Sexual Orientation": {
+      "sexual_h": {
+        "n": 40561,
+        "true_prevalence": 0.2746,
+        "predicted_positive_rate": 0.3448,
+        "mean_true_score": 6.699,
+        "mean_predicted_score": 6.816,
+        "tpr": 0.7815,
+        "fpr": 0.1795,
+        "mean_pred_prob": 0.375,
+        "calibration_error": 0.1004
+      },
+      "sexual_l": {
+        "n": 2269,
+        "true_prevalence": 0.4641,
+        "predicted_positive_rate": 0.5491,
+        "mean_true_score": 9.39,
+        "mean_predicted_score": 8.911,
+        "tpr": 0.8348,
+        "fpr": 0.3018,
+        "mean_pred_prob": 0.5317,
+        "calibration_error": 0.0677
+      },
+      "sexual_g": {
+        "n": 1676,
+        "true_prevalence": 0.3711,
+        "predicted_positive_rate": 0.4791,
+        "mean_true_score": 8.149,
+        "mean_predicted_score": 8.256,
+        "tpr": 0.8376,
+        "fpr": 0.2676,
+        "mean_pred_prob": 0.4803,
+        "calibration_error": 0.1091
+      },
+      "sexual_bi": {
+        "n": 9081,
+        "true_prevalence": 0.4558,
+        "predicted_positive_rate": 0.558,
+        "mean_true_score": 9.412,
+        "mean_predicted_score": 9.086,
+        "tpr": 0.8403,
+        "fpr": 0.3215,
+        "mean_pred_prob": 0.5427,
+        "calibration_error": 0.087
+      },
+      "sexual_queer": {
+        "n": 3762,
+        "true_prevalence": 0.4851,
+        "predicted_positive_rate": 0.6061,
+        "mean_true_score": 9.835,
+        "mean_predicted_score": 9.587,
+        "tpr": 0.8553,
+        "fpr": 0.3712,
+        "mean_pred_prob": 0.5778,
+        "calibration_error": 0.0927
+      }
+    }
+  }
+}
