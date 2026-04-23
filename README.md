@@ -1,4 +1,4 @@
-# MindBridge — AI Student Wellness Check-In
+# MindBridge: AI Student Wellness Check In
 
 **HAII Spring 2026 · Option B Final Project**
 
@@ -133,9 +133,9 @@ HAI_Project_claude/
 
 ## ML Pipeline
 
-**Model:** XGBoost Regressor (GAD-7 score 0–21) + XGBoost Binary Classifier (moderate+ anxiety)
+**Model:** XGBoost Regressor (GAD-7 score 0 to 21) + XGBoost Binary Classifier (moderate+ anxiety)
 
-**Dataset:** Healthy Minds Study 2024–2025 (`n = 61,393` after cleaning), obtained via approved researcher access request
+**Dataset:** Healthy Minds Study 2024 to 2025 (`n = 61,393` after cleaning), obtained via approved researcher access request
 
 **Features (11):**
 - Loneliness: `lone_lackcompanion`, `lone_leftout`, `lone_isolated`
@@ -143,14 +143,14 @@ HAI_Project_claude/
 - PHQ-9 proxy items: `phq9_1`, `phq9_2`, `phq9_3`, `phq9_4`, `phq9_6`
 
 **Performance (held-out test set):**
-- Regressor MAE: **2.94** (0–21 scale)
+- Regressor MAE: **2.94** (0 to 21 scale)
 - Classifier AUC-ROC: **0.871**
 
-**Explainability:** SHAP TreeExplainer — per-prediction factor attribution shown as animated bars ranked by |SHAP value|
+**Explainability:** SHAP TreeExplainer, per prediction factor attribution shown as animated bars ranked by |SHAP value|
 
 **Confidence intervals:** ±1.28σ residuals → 80% CI displayed on every prediction
 
-**Fairness evaluation:** Subgroup metrics (demographic parity, equalized odds, calibration error) computed on held-out data across Gender, Race, International status, and Sexual Orientation — accessible in the Fairness Explorer.
+**Fairness evaluation:** Subgroup metrics (demographic parity, equalized odds, calibration error) computed on held out data across Gender, Race, International status, and Sexual Orientation, accessible in the Fairness Explorer.
 
 ---
 
@@ -174,14 +174,14 @@ HAI_Project_claude/
 
 | Principle | Implementation |
 |-----------|---------------|
-| MS Guidelines 1–2 | Non-diagnosis disclaimer on every page + crisis strip |
+| MS Guidelines 1 to 2 | Non diagnosis disclaimer on every page + crisis strip |
 | MS Guideline 9 (correction) | Back button in wizard, Recalculate on results |
-| MS Guidelines 10–11 (scope + explain) | 80% CI on every prediction; SHAP bars explain *why* |
+| MS Guidelines 10 to 11 (scope + explain) | 80% CI on every prediction; SHAP bars explain *why* |
 | Designing for failures (§2) | FP/FN cost framing shown on results page |
-| Fairness (§4–5) | Live subgroup metrics explorer across 4 demographic axes |
+| Fairness (§4 to 5) | Live subgroup metrics explorer across 4 demographic axes |
 | Auditing (§6) | Synthetic audit cases in fairness report |
 | RAI in practice (§11) | Crisis redirection, AI disclosure on every chat bubble |
-| Transparency (§12–13) | SHAP waterfall + factor attribution |
+| Transparency (§12 to 13) | SHAP waterfall + factor attribution |
 | Privacy | Session-only state; no PII stored; no server-side logging of answers |
 
 ---
@@ -190,14 +190,14 @@ HAI_Project_claude/
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
-| `OPENAI_API_KEY` | Yes | — | OpenAI secret key |
+| `OPENAI_API_KEY` | Yes | N/A | OpenAI secret key |
 | `OPENAI_MODEL` | No | `gpt-4o-mini` | Any OpenAI chat model ID |
 
 ---
 
 ## Data & Privacy
 
-- **Source:** Healthy Minds Study 2024–2025 restricted-access dataset (Healthy Minds Network)
+- **Source:** Healthy Minds Study 2024 to 2025 restricted access dataset (Healthy Minds Network)
 - **Access required:** The dataset is not uploaded to this repository and cannot be redistributed on GitHub; request access through the [Healthy Minds Network Data for Researchers page](https://healthymindsnetwork.org/research/data-for-researchers/)
 - **No PII stored:** Assessment answers live only in the browser session (Zustand in-memory store)
 - **No server-side logging:** The FastAPI backend does not persist any user inputs
