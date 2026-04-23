@@ -126,7 +126,7 @@ HAI_Project_claude/
 
 **Model:** XGBoost Regressor (GAD-7 score 0–21) + XGBoost Binary Classifier (moderate+ anxiety)
 
-**Dataset:** Healthy Minds Study 2024–2025 (`n = 61,393` after cleaning)
+**Dataset:** Healthy Minds Study 2024–2025 (`n = 61,393` after cleaning), obtained via approved researcher access request
 
 **Features (11):**
 - Loneliness: `lone_lackcompanion`, `lone_leftout`, `lone_isolated`
@@ -188,7 +188,8 @@ HAI_Project_claude/
 
 ## Data & Privacy
 
-- **Source:** Healthy Minds Study 2024–2025 public microdata
+- **Source:** Healthy Minds Study 2024–2025 restricted-access dataset (Healthy Minds Network)
+- **Access required:** The dataset is not uploaded to this repository and cannot be redistributed on GitHub; request access through the [Healthy Minds Network Data for Researchers page](https://healthymindsnetwork.org/research/data-for-researchers/)
 - **No PII stored:** Assessment answers live only in the browser session (Zustand in-memory store)
 - **No server-side logging:** The FastAPI backend does not persist any user inputs
 - **Protected attributes excluded from model inputs:** Gender, race, and orientation inform only the fairness audit, not predictions
