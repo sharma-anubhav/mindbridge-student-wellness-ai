@@ -37,7 +37,16 @@ OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4o-mini
 ```
 
-### 4. Train the model (first time only)
+### 4. Prepare HMS data (first time only)
+
+Request and download access-approved Healthy Minds Study data from the [Healthy Minds Network Data for Researchers page](https://healthymindsnetwork.org/research/data-for-researchers/), then place the raw export in your local `Data/` directory (do not commit raw data files).
+
+```bash
+python scripts/clean_hms.py
+python scripts/process_data.py
+```
+
+### 5. Train the model (first time only)
 
 ```bash
 python scripts/train_model.py
@@ -45,7 +54,7 @@ python scripts/train_model.py
 
 This produces `models/xgb_regressor.pkl`, `xgb_classifier.pkl`, `shap_explainer.pkl`, and `fairness_report.json`.
 
-### 5. Start the app
+### 6. Start the app
 
 ```bash
 bash start.sh
