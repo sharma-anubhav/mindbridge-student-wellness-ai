@@ -131,6 +131,14 @@ HAI_Project_claude/
 
 ---
 
+## Screenshots
+
+### Assessment Flow
+
+![Assessment flow screenshot](slides_assets/assessment.png)
+
+---
+
 ## ML Pipeline
 
 **Model:** XGBoost Regressor (GAD-7 score 0 to 21) + XGBoost Binary Classifier (moderate+ anxiety)
