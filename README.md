@@ -73,45 +73,45 @@ Open `http://localhost:3000` in your browser.
 ```
 HAI_Project_claude/
 ├── api/                        # FastAPI backend
-│   ├── main.py                 # App factory, CORS, router mounting
-│   └── routers/
+│: ├── main.py                 # App factory, CORS, router mounting
+│: └── routers/
 │       ├── predict.py          # POST /api/predict
 │       ├── chat.py             # POST /api/chat/stream (SSE)
 │       └── fairness.py         # GET /api/fairness, GET /api/meta
 ├── src/
-│   ├── llm/
-│   │   └── chat.py             # OpenAI streaming wrapper + system prompt
-│   ├── model/
-│   │   └── predict.py          # XGBoost inference + SHAP explanations
-│   └── utils/
+│: ├── llm/
+│: │: └── chat.py             # OpenAI streaming wrapper + system prompt
+│: ├── model/
+│: │: └── predict.py          # XGBoost inference + SHAP explanations
+│: └── utils/
 │       └── constants.py        # Feature metadata, tier thresholds
 ├── web/                        # Next.js 14 frontend
-│   └── src/
+│: └── src/
 │       ├── app/
-│       │   ├── page.tsx        # Home / landing
-│       │   ├── assessment/     # 3-step check-in wizard
-│       │   ├── results/        # Gauge, SHAP bars, recommendations
-│       │   ├── chat/           # AI wellness guide (streaming chat)
-│       │   ├── fairness/       # Fairness explorer with Recharts
-│       │   ├── layout.tsx      # Root layout (Navbar, crisis strip)
-│       │   └── template.tsx    # Page transition animation
+│       │: ├── page.tsx        # Home / landing
+│       │: ├── assessment/     # 3-step check-in wizard
+│       │: ├── results/        # Gauge, SHAP bars, recommendations
+│       │: ├── chat/           # AI wellness guide (streaming chat)
+│       │: ├── fairness/       # Fairness explorer with Recharts
+│       │: ├── layout.tsx      # Root layout (Navbar, crisis strip)
+│       │: └── template.tsx    # Page transition animation
 │       ├── components/
-│       │   ├── layout/         # Navbar, ThemeInit
-│       │   ├── results/        # GaugeChart, ShapBars
-│       │   └── ui/             # Card, Button
+│       │: ├── layout/         # Navbar, ThemeInit
+│       │: ├── results/        # GaugeChart, ShapBars
+│       │: └── ui/             # Card, Button
 │       ├── hooks/
-│       │   └── useStore.ts     # Zustand store (assessment, chat state)
+│       │: └── useStore.ts     # Zustand store (assessment, chat state)
 │       └── lib/
 │           ├── api.ts          # Typed fetch wrappers + SSE reader
 │           ├── constants.ts    # Feature metadata (TS mirror of Python)
 │           └── utils.ts        # cn(), scoreToTier(), tier styles
 ├── models/                     # Trained artifacts (git-ignored)
 ├── scripts/
-│   ├── train_model.py          # XGBoost + SHAP + fairness training
-│   ├── clean_hms.py            # Raw HMS data cleaning
-│   └── process_data.py         # Feature engineering pipeline
+│: ├── train_model.py          # XGBoost + SHAP + fairness training
+│: ├── clean_hms.py            # Raw HMS data cleaning
+│: └── process_data.py         # Feature engineering pipeline
 ├── Data/
-│   └── processed/              # ML-ready CSVs
+│: └── processed/              # ML-ready CSVs
 ├── start.sh                    # Starts both servers
 ├── requirements.txt
 └── .env                        # API keys (never commit)
