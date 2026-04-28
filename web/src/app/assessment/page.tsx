@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useStore } from "@/hooks/useStore";
 import { predict } from "@/lib/api";
 import { FEATURE_META, type FeatureKey } from "@/lib/constants";
@@ -98,6 +98,20 @@ function QuestionMCQ({ featureKey }: { featureKey: FeatureKey }) {
  );
 }
 
+// ── Frozen step content (prevents AnimatePresence from re-rendering exiting div) ──
+function StepQuestions({ stepData, step }: { stepData: (typeof STEPS)[number]; step: number }) {
+ const [frozen] = useState(() => ({ stepData, step }));
+ return (
+  <div className={`grid gap-4 ${frozen.step === 3 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-3"} mb-6`}>
+   {frozen.stepData.keys.map((key) => (
+    <Card key={key} hover>
+     <QuestionMCQ featureKey={key} />
+    </Card>
+   ))}
+  </div>
+ );
+}
+
 // ── Page ─────────────────────────────────────────────
 export default function AssessmentPage() {
  const router = useRouter();
@@ -158,24 +172,15 @@ export default function AssessmentPage() {
 
    <StepIndicator current={step} />
 
-   {/* Question cards */}
-   <AnimatePresence mode="wait">
-    <motion.div
-     key={step}
-     initial={{ opacity: 0, x: 30 }}
-     animate={{ opacity: 1, x: 0 }}
-     exit={{ opacity: 0, x: -30 }}
-     transition={{ duration: 0.3 }}
-    >
-     <div className={`grid gap-4 ${step === 3 ? "grid-cols-1" : "grid-cols-1 sm:grid-cols-3"} mb-6`}>
-      {currentStep.keys.map((key) => (
-       <Card key={key} hover>
-        <QuestionMCQ featureKey={key} />
-       </Card>
-      ))}
-     </div>
-    </motion.div>
-   </AnimatePresence>
+   {/* Question cards - enter-only animation avoids AnimatePresence timing bugs */}
+   <motion.div
+    key={step}
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.2 }}
+   >
+    <StepQuestions stepData={currentStep} step={step} />
+   </motion.div>
 
    {/* Inline feedback */}
    {feedbackMsg && (
